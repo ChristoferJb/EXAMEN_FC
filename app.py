@@ -62,7 +62,7 @@ if st.button("Analizar Postura"):
         prediccion = modelo.predict(vector_tfidf)[0]
         
         # Mapeo de salida para el usuario final
-        if prediccion == 1:
+        if prediccion == 2:
             st.success("🟢 **Postura Detectada:** ACEPTADO (Apoya la integración de IA)")
         elif prediccion == 0:
             st.info("⚪ **Postura Detectada:** NEUTRAL (Pide reglas, normativas o es condicional)")
