@@ -64,9 +64,12 @@ if st.button("Analizar Postura"):
         # Mapeo de salida para el usuario final
         if prediccion == 2:
             st.success("🟢 **Opinion detectada como:** ACEPTADO (Apoya la integración de IA)")
+            
         elif prediccion == 0:
             st.info("⚪ **Postura Detectada:** NEUTRAL (Pide reglas, normativas o es condicional)")
         else:
             st.error("🔴 **Postura Detectada:** RECHAZO (Condena el uso o pide prohibición)")
             
         st.caption(f"Texto procesado por el motor interno: *{texto_limpio}*")
+        prediccion_numero = modelo.predict(vector_tfidf)[0]
+        st.write(f"DEBUG - numero crudo devuelto por el modelo: {prediccion_numero}")
