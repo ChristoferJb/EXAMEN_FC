@@ -71,5 +71,3 @@ if st.button("Analizar Postura"):
             st.error("🔴 **Postura Detectada:** RECHAZO (Condena el uso o pide prohibición)")
             
         st.caption(f"Texto procesado por el motor interno: *{texto_limpio}*")
-        prediccion_numero = modelo.predict(vector_tfidf)[0]
-        st.write(f"DEBUG - numero crudo devuelto por el modelo: {prediccion_numero}")
